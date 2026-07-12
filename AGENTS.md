@@ -45,6 +45,25 @@ Business logic must never depend on an LLM.
 
 ---
 
+# Planning Before Implementation
+
+Unless explicitly instructed otherwise:
+
+The AI should never begin implementing immediately.
+
+Instead:
+
+1. Analyze the request.
+2. Read the relevant documentation.
+3. Produce an implementation plan.
+4. Wait for approval.
+
+Implementation should begin only after the plan has been reviewed and approved.
+
+This applies to every iteration, regardless of size.
+
+---
+
 # Architecture Hierarchy
 
 Always follow this hierarchy.
@@ -97,10 +116,13 @@ Before making changes:
 2. Identify the affected Capability.
 3. Read only the relevant documentation.
 4. Locate existing implementation.
-5. Reuse existing abstractions.
-6. Implement the smallest correct solution.
-7. Write or update tests.
-8. Explain the change.
+5. Produce an implementation plan.
+6. Estimate implementation scope.
+7. If the implementation is too large, decompose it into smaller logical tasks.
+8. Reuse existing abstractions.
+9. Implement the smallest correct solution.
+10. Write or update tests.
+11. Explain the change.
 
 Never skip these steps.
 
@@ -377,6 +399,46 @@ Build only what is required today.
 
 ---
 
+# Incremental Implementation
+
+The Platform is developed through small, reviewable implementation increments.
+
+Avoid large, monolithic code generation.
+
+As a guideline:
+
+- Prefer implementation chunks of approximately **300–500 lines of newly written code**.
+- If a task is expected to exceed this size, split it into multiple logical implementation steps.
+- Each step should produce a working, testable state whenever practical.
+
+Large implementation requests should be decomposed into smaller tasks such as:
+
+- Contracts
+- Models
+- Infrastructure
+- Business Logic
+- Tests
+- Documentation
+
+rather than attempting to implement an entire capability in a single step.
+
+The objective is not to minimize lines of code.
+
+The objective is to maximize:
+
+- Reviewability
+- Correctness
+- Determinism
+- Testability
+- Recoverability
+- AI reasoning quality
+
+If an implementation appears too large for one iteration, stop after producing an implementation plan and propose a decomposition before writing code.
+
+When uncertain, prefer **smaller implementation increments** over larger ones.
+
+---
+
 # If You Are Unsure
 
 Stop and determine:
@@ -455,7 +517,7 @@ This repository follows a mandatory implementation workflow.
 
 Before beginning any implementation task, read:
 
-WORKFLOW.md
+- WORKFLOW.md
 
 The workflow defines:
 
@@ -463,11 +525,28 @@ The workflow defines:
 - Session management
 - Progress tracking
 - Checkpoints
-- Handoff procedures
+- Session handoffs
 - Definition of Done
 
-Do not begin implementation without following that workflow.
+Do not begin implementation without following the workflow.
 
-Before ending any implementation session, update all required progress files as defined in WORKFLOW.md.
+---
 
-An implementation session is not complete until repository state, documentation, and progress tracking are synchronized.
+# Session Completion
+
+An implementation session is not complete until the repository has been fully synchronized.
+
+Before ending every implementation session:
+
+- Complete the current logical implementation step.
+- Review the implementation.
+- Run or update appropriate tests.
+- Review whether documentation needs updating.
+- Update all required progress files as defined in WORKFLOW.md.
+- Generate or update `NEXT_SESSION.md`.
+- If the iteration is complete, generate an Iteration Checkpoint and update `ITERATION_HISTORY.md`.
+- If the iteration is incomplete, update `SESSION_HANDOFF.md`.
+
+Leave the repository in a state where a completely new AI assistant can continue development without relying on previous conversations.
+
+The repository—not the chat history—is the source of truth.
