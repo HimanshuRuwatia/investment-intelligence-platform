@@ -10,23 +10,6 @@
 
 ---
 
-# AI Instructions
-
-Before ending every implementation session:
-
-1. Review the repository.
-2. Review CURRENT_STATUS.md.
-3. Review SESSION_HANDOFF.md (if present).
-4. Determine the exact current implementation state.
-5. Rewrite this entire file.
-6. Ensure the prompt below reflects the current state of development.
-
-This file should always describe the **current** repository.
-
-Never leave stale information.
-
----
-
 # Current Repository State
 
 ## Current Milestone
@@ -37,71 +20,66 @@ M1 – Platform Foundation
 
 ## Current Iteration
 
-M1.2 – Platform Core
+M1.2 – Platform Core (Step B remaining)
 
 ---
 
 ## Current Task
 
-Implement the minimum Platform Core: initialization, configuration loader, logging, Plugin Manager, dependency container, and application lifecycle.
+Implement M1.2 Step B: Plugin Contract, Plugin Registry, Plugin Manager, bootstrap wiring, and integration tests.
 
 ---
 
 ## Completed During Previous Session
 
-M1.1 – Project Bootstrap:
+M1.2 Step A – Platform Foundations:
 
-- pnpm + TypeScript ESM project
-- Vitest / ESLint / Prettier
-- Minimal CLI (`src/bootstrap`, `src/cli`)
-- Smoke tests
-- README Getting Started
+- Config loader (`src/config/`) + `config/default.json`
+- Structured logger (`src/shared/logger.ts`)
+- ServiceContainer, PlatformLifecycle, createPlatform
+- Bootstrap starts/stops platform around CLI
+- Unit tests (config, logger, platform)
 
-Checkpoint: `progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md`
+Checkpoint: `progress/checkpoints/M1.2_STEP_A_PLATFORM_FOUNDATIONS.md`
 
 ---
 
 ## Remaining Work
 
-From `docs/33_IMPLEMENTATION_PLAN.md` Iteration 2 — Platform Core:
+M1.2 Step B only:
 
-- Platform initialization
-- Configuration loader
-- Logging
-- Plugin Manager
-- Dependency container
-- Application lifecycle
-
-Do **not** implement SQLite, Evidence Store, financial plugins, MCP, or Decision Engine in M1.2 unless the iteration plan explicitly includes them.
+- `src/core/contracts/plugin.ts` — Plugin Contract interface
+- `src/core/plugin-registry.ts`
+- `src/core/plugin-manager.ts` — register/init/shutdown; **no Execute pipeline**
+- Wire into `createPlatform` / bootstrap
+- Integration tests: zero-plugin start; no-op test double registers
+- Do **not** add business plugins under `src/plugins/`
+- Do **not** start M1.3 (persistence)
 
 ---
 
 ## Files Currently Being Modified
 
-None (M1.1 complete; M1.2 not started).
+None (Step A complete; Step B not started).
 
 ---
 
 ## Suggested Documentation
 
-Read only what M1.2 requires:
-
-- `AGENTS.md`
-- `WORKFLOW.md`
+- `AGENTS.md`, `WORKFLOW.md`
 - `progress/CURRENT_STATUS.md`
-- `progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md`
-- `docs/33_IMPLEMENTATION_PLAN.md` (Iteration 2)
-- `docs/20_ARCHITECTURE.md` (Platform Core sections)
-- `docs/30_TECH_STACK.md`
-- `docs/31_CODING_STANDARDS.md`
-- `docs/34_TESTING_STRATEGY.md`
+- `progress/checkpoints/M1.2_STEP_A_PLATFORM_FOUNDATIONS.md`
+- `docs/33_IMPLEMENTATION_PLAN.md` §26
+- `docs/20_ARCHITECTURE.md` §§11–12, §26, §79
+- `docs/22_PLUGIN_SPEC.md` (lifecycle ops)
+- Existing Step A code under `src/core/platform.ts`, `src/bootstrap/index.ts`
 
 ---
 
 ## Known Risks
 
-- M1.2 scope in the implementation plan is broader than a single small session; decompose if needed.
-- Empty `src/core` / `src/config` placeholders exist — extend them; do not invent a parallel layout.
+- Keep Plugin Manager minimal; defer discovery/execution to M1.4
+- Extend `createPlatform`; do not invent a parallel composition root
 
 ---
 
@@ -116,7 +94,7 @@ Read:
 - AGENTS.md
 - WORKFLOW.md
 - progress/CURRENT_STATUS.md
-- progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
+- progress/checkpoints/M1.2_STEP_A_PLATFORM_FOUNDATIONS.md
 
 SESSION_HANDOFF.md has no active handoff.
 
@@ -124,24 +102,15 @@ Read only the documentation required for the current task.
 
 Current iteration:
 
-M1.2 – Platform Core
+M1.2 – Platform Core — Step B
 
 Current objective:
 
-Implement the minimum Platform Core (initialization, configuration loader, logging, Plugin Manager, dependency container, application lifecycle).
+Implement Plugin Contract, Plugin Registry, and Plugin Manager; wire into platform/bootstrap; add integration tests.
 
 Completed previously:
 
-M1.1 – Project Bootstrap (runnable TypeScript + pnpm + Vitest + ESLint/Prettier + minimal CLI).
-
-Remaining work:
-
-- Platform initialization
-- Configuration loader
-- Logging
-- Plugin Manager
-- Dependency container
-- Application lifecycle
+M1.2 Step A – config, logger, container, lifecycle, platform composition.
 
 Do not write code.
 
@@ -153,6 +122,8 @@ Produce a plan.
 
 Wait for approval.
 
+Do not implement persistence (M1.3) or plugin execution/discovery (M1.4).
+
 ---
 
 # Validation
@@ -161,6 +132,4 @@ Before saving this file verify:
 
 - Repository state matches the prompt.
 - CURRENT_STATUS.md matches the prompt.
-- SESSION_HANDOFF.md matches the prompt.
-- No completed tasks remain listed as incomplete.
 - No stale information remains.

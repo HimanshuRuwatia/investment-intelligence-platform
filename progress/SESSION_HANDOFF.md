@@ -10,10 +10,12 @@
 
 No active session handoff.
 
-M1.1 – Project Bootstrap is complete.
+M1.2 Step A – Platform Foundations is complete.
+
+M1.2 overall remains In Progress (Step B not started).
 
 See:
 
 - progress/CURRENT_STATUS.md
-- progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
-- progress/NEXT_SESSION.md
+- progress/checkpoints/M1.2_STEP_A_PLATFORM_FOUNDATIONS.md
+- NEXT_SESSION.md

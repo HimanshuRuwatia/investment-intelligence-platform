@@ -62,7 +62,8 @@ pnpm start -- --help
 pnpm start -- --version
 ```
 
-The CLI is a minimal bootstrap entry point. Platform Core initialization arrives in later iterations.
+On start, the Platform loads `config/default.json`, initializes logging and lifecycle, then runs the CLI.
+Override with `NODE_ENV` and `LOG_LEVEL`. Plugin Manager arrives in M1.2 Step B.
 
 ---
 

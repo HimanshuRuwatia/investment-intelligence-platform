@@ -20,7 +20,7 @@ M1.2 – Platform Core
 
 # Status
 
-Not Started
+In Progress
 
 Possible values:
 
@@ -33,19 +33,21 @@ Possible values:
 
 # Current Task
 
-Platform Core (config loader, logging, Plugin Manager, dependency container, application lifecycle)
+M1.2 Step B – Plugin Registry, Plugin Manager, bootstrap wiring, integration tests
 
 ---
 
 # Last Completed Iteration
 
-M1.1 – Project Bootstrap
+M1.2 Step A – Platform Foundations
 
 ---
 
 # Next Planned Iteration
 
-M1.2 – Platform Core
+M1.2 Step B – Plugin skeleton (still within M1.2)
+
+Then: M1.3 – Persistence Foundation
 
 ---
 
@@ -57,7 +59,7 @@ main
 
 # Last Checkpoint
 
-progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
+progress/checkpoints/M1.2_STEP_A_PLATFORM_FOUNDATIONS.md
 
 ---
 
@@ -75,4 +77,4 @@ None
 
 # Notes
 
-M1.1 delivered a runnable TypeScript + pnpm skeleton with Vitest, ESLint, Prettier, and a minimal CLI. No Platform Core logic yet.
+Step A delivered config loader, structured logger, service container, lifecycle, and platform composition. Step B (Plugin Registry/Manager) is not started.
