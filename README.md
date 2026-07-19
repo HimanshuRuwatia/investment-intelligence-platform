@@ -22,6 +22,50 @@ The first supported asset class is **Indian Mutual Funds**, but the architecture
 
 ---
 
+# Getting Started
+
+## Prerequisites
+
+* Node.js 20+ (LTS recommended)
+* [pnpm](https://pnpm.io/) 10+
+
+## Install
+
+```bash
+pnpm install
+```
+
+## Build
+
+```bash
+pnpm build
+```
+
+## Test
+
+```bash
+pnpm test
+```
+
+## Lint and format
+
+```bash
+pnpm lint
+pnpm format:check
+```
+
+## Run the CLI
+
+```bash
+pnpm start
+pnpm start -- --help
+pnpm start -- --version
+```
+
+The CLI is a minimal bootstrap entry point. Platform Core initialization arrives in later iterations.
+
+---
+
 # Repository Philosophy
 
 This repository follows one guiding principle:

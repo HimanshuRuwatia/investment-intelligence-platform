@@ -14,7 +14,7 @@ M1 – Platform Foundation
 
 # Current Iteration
 
-M1.1 – Project Bootstrap
+M1.2 – Platform Core
 
 ---
 
@@ -33,13 +33,13 @@ Possible values:
 
 # Current Task
 
-Project Bootstrap
+Platform Core (config loader, logging, Plugin Manager, dependency container, application lifecycle)
 
 ---
 
 # Last Completed Iteration
 
-None
+M1.1 – Project Bootstrap
 
 ---
 
@@ -57,7 +57,7 @@ main
 
 # Last Checkpoint
 
-None
+progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
 
 ---
 
@@ -75,4 +75,4 @@ None
 
 # Notes
 
-None
+M1.1 delivered a runnable TypeScript + pnpm skeleton with Vitest, ESLint, Prettier, and a minimal CLI. No Platform Core logic yet.

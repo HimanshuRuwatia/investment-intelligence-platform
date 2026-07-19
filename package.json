@@ -1,0 +1,31 @@
+{
+  "name": "investment-intelligence-platform",
+  "version": "0.1.0",
+  "description": "Deterministic financial intelligence platform for explainable investment analysis",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/bootstrap/index.js",
+    "cli": "node dist/bootstrap/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.0.10",
+    "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vitest": "^3.2.4"
+  }
+}

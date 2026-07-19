@@ -1,9 +1,12 @@
 node_modules/
 dist/
 coverage/
+.pnpm-store/
 .env
 .env.*
 *.log
+logs/*
+!logs/.gitkeep
 
 .vscode/
 

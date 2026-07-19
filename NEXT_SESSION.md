@@ -1,4 +1,4 @@
-# NEXT_PROMPT.md
+# NEXT_SESSION.md
 
 > This file is maintained automatically by the AI assistant.
 >
@@ -31,59 +31,81 @@ Never leave stale information.
 
 ## Current Milestone
 
-(Update automatically.)
+M1 – Platform Foundation
 
 ---
 
 ## Current Iteration
 
-(Update automatically.)
+M1.2 – Platform Core
 
 ---
 
 ## Current Task
 
-(Update automatically.)
+Implement the minimum Platform Core: initialization, configuration loader, logging, Plugin Manager, dependency container, and application lifecycle.
 
 ---
 
 ## Completed During Previous Session
 
-(Update automatically.)
+M1.1 – Project Bootstrap:
+
+- pnpm + TypeScript ESM project
+- Vitest / ESLint / Prettier
+- Minimal CLI (`src/bootstrap`, `src/cli`)
+- Smoke tests
+- README Getting Started
+
+Checkpoint: `progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md`
 
 ---
 
 ## Remaining Work
 
-(Update automatically.)
+From `docs/33_IMPLEMENTATION_PLAN.md` Iteration 2 — Platform Core:
+
+- Platform initialization
+- Configuration loader
+- Logging
+- Plugin Manager
+- Dependency container
+- Application lifecycle
+
+Do **not** implement SQLite, Evidence Store, financial plugins, MCP, or Decision Engine in M1.2 unless the iteration plan explicitly includes them.
 
 ---
 
 ## Files Currently Being Modified
 
-(Update automatically.)
+None (M1.1 complete; M1.2 not started).
 
 ---
 
 ## Suggested Documentation
 
-(Update automatically.)
+Read only what M1.2 requires:
 
-List only the documents required for the next task.
+- `AGENTS.md`
+- `WORKFLOW.md`
+- `progress/CURRENT_STATUS.md`
+- `progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md`
+- `docs/33_IMPLEMENTATION_PLAN.md` (Iteration 2)
+- `docs/20_ARCHITECTURE.md` (Platform Core sections)
+- `docs/30_TECH_STACK.md`
+- `docs/31_CODING_STANDARDS.md`
+- `docs/34_TESTING_STRATEGY.md`
 
 ---
 
 ## Known Risks
 
-(Update automatically.)
+- M1.2 scope in the implementation plan is broader than a single small session; decompose if needed.
+- Empty `src/core` / `src/config` placeholders exist — extend them; do not invent a parallel layout.
 
 ---
 
 ## Exact Prompt For Next Session
-
-The AI assistant should replace everything below with a prompt customized for the current repository state.
-
-Example:
 
 ---
 
@@ -94,10 +116,9 @@ Read:
 - AGENTS.md
 - WORKFLOW.md
 - progress/CURRENT_STATUS.md
+- progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
 
-Read SESSION_HANDOFF.md if it exists.
-
-Otherwise read the latest Iteration Checkpoint.
+SESSION_HANDOFF.md has no active handoff.
 
 Read only the documentation required for the current task.
 
@@ -107,17 +128,26 @@ M1.2 – Platform Core
 
 Current objective:
 
-Implement Plugin Manager.
+Implement the minimum Platform Core (initialization, configuration loader, logging, Plugin Manager, dependency container, application lifecycle).
+
+Completed previously:
+
+M1.1 – Project Bootstrap (runnable TypeScript + pnpm + Vitest + ESLint/Prettier + minimal CLI).
 
 Remaining work:
 
-...
+- Platform initialization
+- Configuration loader
+- Logging
+- Plugin Manager
+- Dependency container
+- Application lifecycle
 
 Do not write code.
 
 First inspect the repository.
 
-Verify implementation.
+Verify implementation matches CURRENT_STATUS.md.
 
 Produce a plan.
 

@@ -6,74 +6,14 @@
 
 ---
 
-# Current Iteration
+# Status
 
-Example:
+No active session handoff.
 
-M1.2 – Platform Core
+M1.1 – Project Bootstrap is complete.
 
----
+See:
 
-# Current Task
-
-Describe exactly what is being implemented.
-
----
-
-# Completed During This Session
-
-- Example
-- Example
-- Example
-
----
-
-# Files Created
-
--
-
----
-
-# Files Modified
-
--
-
----
-
-# Important Architectural Decisions
-
--
-
----
-
-# Temporary Assumptions
-
--
-
----
-
-# Known Issues
-
--
-
----
-
-# TODO Before Continuing
-
-1.
-
-2.
-
-3.
-
----
-
-# Recommended Next Step
-
-Describe the immediate next implementation step.
-
----
-
-# Recommended Prompt
-
-Generate the prompt that should be given to a fresh AI assistant to continue this work.
+- progress/CURRENT_STATUS.md
+- progress/checkpoints/M1.1_PROJECT_BOOTSTRAP.md
+- progress/NEXT_SESSION.md
