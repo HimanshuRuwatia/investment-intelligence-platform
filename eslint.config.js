@@ -10,10 +10,16 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   prettier,
   {
-    files: ["**/*.{ts,js}"],
+    files: ["**/*.{ts,js,mjs}"],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
+      globals: {
+        console: "readonly",
+        process: "readonly",
+        URL: "readonly",
+        Buffer: "readonly",
+      },
     },
     rules: {
       "@typescript-eslint/consistent-type-imports": [

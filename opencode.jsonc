@@ -1,0 +1,370 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    {
+      "action": "*",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "glob",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "grep",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "question",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "*.env",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "*.env.*",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "*.env.example",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "*.env",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.env.*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "*.env.example",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "AGENTS.md",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "AGENTIC_DEVELOPMENT.md",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "WORKFLOW.md",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": ".gitignore",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "opencode.jsonc",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": ".opencode/**",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": ".github/**",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "scripts/agent-audit*.mjs",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git status *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git diff *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git log *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git branch *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "pnpm test*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "pnpm lint*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "pnpm build*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "node scripts/agent-audit.mjs *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "node scripts/agent-audit-gate.mjs",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh auth status*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh repo view*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh pr list *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh pr view *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh pr diff *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "gh api *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "gh pr create *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "gh pr merge *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git add *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git push *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git checkout *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git switch *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git pull *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git merge *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git rebase *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git reset *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git clean *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "pnpm install*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "pnpm add*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "npm install*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "npx *",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "sudo *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * refs/heads/main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push HEAD:main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push HEAD:refs/heads/main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * :refs/heads/main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * HEAD:main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * HEAD:refs/heads/main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * :main*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push -f*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * --force*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * -f*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force-with-lease*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push * +*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "gh api --method DELETE *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "gh repo delete*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "gh secret set*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "gh workflow run*",
+      "effect": "deny"
+    }
+  ]
+}

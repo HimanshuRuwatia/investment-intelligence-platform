@@ -492,6 +492,7 @@ Use these documents as the authoritative reference.
 | 34_TESTING_STRATEGY.md         | Testing methodology           |
 | 35_PLUGIN_DEVELOPMENT_GUIDE.md | Plugin implementation         |
 | 39_AI_DEVELOPMENT_GUIDE.md     | AI development practices      |
+| AGENTIC_DEVELOPMENT.md          | Agent scope, Git and GitHub gates |
 
 Read only the documents relevant to the current task.
 
@@ -518,6 +519,7 @@ This repository follows a mandatory implementation workflow.
 Before beginning any implementation task, read:
 
 - WORKFLOW.md
+- AGENTIC_DEVELOPMENT.md
 
 The workflow defines:
 
@@ -527,6 +529,14 @@ The workflow defines:
 - Checkpoints
 - Session handoffs
 - Definition of Done
+
+`AGENTIC_DEVELOPMENT.md` defines:
+
+- Repository-scoped agent permissions
+- `feature/*` branch workflow
+- GitHub/`gh` approval gates
+- Independent review and merge requirements
+- Rules for keeping autonomous agents inside IIP scope
 
 Do not begin implementation without following the workflow.
 

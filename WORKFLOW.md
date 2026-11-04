@@ -56,6 +56,10 @@ Documentation Review
 
 ↓
 
+Audit Gate
+
+↓
+
 Progress Update
 
 ↓
@@ -128,6 +132,14 @@ Verify:
 - Deterministic outputs preserved.
 
 ---
+
+# Audit Gate
+
+Before asking for commit, push, PR creation, or merge approval:
+
+1. Run `node scripts/agent-audit-gate.mjs`.
+2. If it fails, do not request approval; resolve the missing or inconsistent audit evidence.
+3. If it passes, report that it is necessary but not sufficient and still present the full diff for review.
 
 # Documentation Review
 
